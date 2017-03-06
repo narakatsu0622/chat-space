@@ -1,46 +1,64 @@
 # README
 
-##データベース定義の記入方法
->
-column = カラム名
-type = データ型
-index = indexを貼るか?(貼るカラムの行にはyと記入)
-null = nullを許可するか?(許可するカラムの行にははyと記入)
-unique = テーブル内において値が単一か?(単一カラムの行にはyと記入)
->
-## Messagesテーブルの定義
+## データベース定義の記入方法
 
->
-|colimn  |type   |index|null|unique|
-|body    |text   |     |y   |      |
-|image   |string |     |y   |      |
-|group_id|integer|y    |    |      |
-|user_id |type   |y    |    |      |
->
+column = カラム名
+
+type = データ型
+
+index = indexを貼るか?(貼るカラムの行にはyと記入)
+
+null = nullを許可するか?(許可するカラムの行にははyと記入)
+
+unique = テーブル内において値が単一か?(単一カラムの行にはyと記入)
+
+
+## Messagesテーブル
+
+
+
+|colimn   | type      | index| null| unique|
+|---------|-----------|------|-----|-------|
+| id      | integer   |      | y   | y     |
+| body    | text      |      | y   |       |
+| image   | string    |      | y   |       |
+| group_id| preference| y    |     |       |
+| user_id | preference| y    |     |       |
+
+###Messagesテーブルに関するアソシエーション
+> Message belongs to user
+
+> Message belongs to group
 
 
 
 ## Usersテーブル
 >
-|colimn  |type   |index|null|unique|
-|user_id |integer|y    |    |y     |
-|name    |text   |     |    |y     |
-|mail    |text   |     |    |y     |
-|password|text   |     |    |      |
+| colimn  | type   | index| null| unique|
+|---------|--------|------|-----|-------|
+| user_id | integer| y    |     | y     |
+| name    | text   |      |     | y     |
+| mail    | text   |      |     | y     |
+| password| text   |      |     |       |
+
+###Usersテーブルに関するアソシエーション
+> User has many Messages
 >
+> User has and belongs to many Groups
+
 ## Groupsテーブル
 >
-|colimn    |type   |index|null|unique|
-|group_id  |integer|y    |    |      |
-|user_id   |integer|     |    |      |
-|broup_name|text   |     |    |      |
->
+| colimn    | type      | index| null| unique|
+|-----------|-----------|------|-----|-------|
+| group_id  | integer   | y    |     |       |
+| user_id   | preference|      |     |       |
+| broup_name| text      |      |     |       |
 
-##アソシエーションの定義
->User has many Messages
->User has and belongs to many Groups
->Group has many Messages
->Group has and belongs to many Users
->Message belongs to user
->Message belongs to group
+###Groupsテーブルに関するアソシエーション
+
+> Group has many Messages
+
+> Group has and belongs to many Users
+
+
 
