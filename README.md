@@ -12,7 +12,7 @@ null = nullを許可するか?(許可するカラムの行にははyと記入)
 
 unique = テーブル内において値が単一か?(単一カラムの行にはyと記入)
 
-外部キー = データ型がreference型の場合(テーブル名.カラム名)の形で記入
+外部キー = データ型がreferences型の場合(テーブル名.カラム名)の形で記入
 
 
 ## messagesテーブル
@@ -24,8 +24,8 @@ unique = テーブル内において値が単一か?(単一カラムの行には
 | id      | integer   |      | y   | y     |      |
 | body    | text      |      | y   |       |
 | image   | string    |      | y   |       |
-| group_id| reference| y    |     |       |groups.id
-| user_id | reference| y    |     |       |users.id
+| group_id| references| y    |     |       |groups.id
+| user_id | references| y    |     |       |users.id
 
 ###messagesテーブルに関するアソシエーション
 > belongs_to :user
@@ -51,11 +51,11 @@ unique = テーブル内において値が単一か?(単一カラムの行には
 
 ## groupsテーブル
 
-| colimn    | type      | index| null| unique|外部キー
-|-----------|-----------|------|-----|-------|-----
-| id        | integer   | y    |     |       |
-| user_id   | reference |      |     |       |users.id
-| broup_name| text      |      |     |       |
+| colimn    | type       | index| null| unique|外部キー
+|-----------|------------|------|-----|-------|-----
+| id        | integer    | y    |     |       |
+| user_id   | references |      |     |       |users.id
+| broup_name| text       |      |     |       |
 
 
 ###Groupsテーブルに関するアソシエーション
@@ -68,8 +68,8 @@ unique = テーブル内において値が単一か?(単一カラムの行には
 
 | colimn    | type      | index| null| unique|外部キー
 |-----------|-----------|------|-----|-------|-----
-| group_id  |  reference| y    |     |       |group.id
-| user_id   |  reference| y    |     |       |users.id
+| group_id  |  references| y    |     |       |group.id
+| user_id   |  references| y    |     |       |users.id
 
 ### group_usersテーブルに関するアソシエーション
 
