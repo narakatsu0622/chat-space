@@ -75,4 +75,4 @@ unique = テーブル内において値が単一か?(単一カラムの行には
 
 > Group_User belongs to Group
 
-> Group_User belongs to Group
+> Group_User belongs to User
