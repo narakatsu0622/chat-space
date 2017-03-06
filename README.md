@@ -26,6 +26,6 @@ unique = テーブル内において値が単一か?(単一カラムの行には
 ## groupsテーブル
 
 |colimn    |type   |index|null|unique|
-|group_id  |integer|y    |    |y     |
+|group_id  |integer|y    |    |      |
 |user_id   |integer|     |    |      |
-|broup_name|text   |     |    |y     |
+|broup_name|text   |     |    |      |
