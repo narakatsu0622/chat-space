@@ -12,18 +12,20 @@ null = nullを許可するか?(許可するカラムの行にははyと記入)
 
 unique = テーブル内において値が単一か?(単一カラムの行にはyと記入)
 
+外部キー = データ型がpreference型の場合(テーブル名.カラム名)の形で記入
+
 
 ## Messagesテーブル
 
 
 
-|colimn   | type      | index| null| unique|
-|---------|-----------|------|-----|-------|
-| id      | integer   |      | y   | y     |
+|colimn   | type      | index| null| unique|外部キー|
+|---------|-----------|------|-----|-------|------|
+| id      | integer   |      | y   | y     |      |
 | body    | text      |      | y   |       |
 | image   | string    |      | y   |       |
-| group_id| preference| y    |     |       |
-| user_id | preference| y    |     |       |
+| group_id| preference| y    |     |       |Groups.group_id
+| user_id | preference| y    |     |       |Users.user_id
 
 ###Messagesテーブルに関するアソシエーション
 > Message belongs to user
@@ -34,8 +36,8 @@ unique = テーブル内において値が単一か?(単一カラムの行には
 
 ## Usersテーブル
 >
-| colimn  | type   | index| null| unique|
-|---------|--------|------|-----|-------|
+| colimn  | type   | index| null| unique|外部キー
+|---------|--------|------|-----|-------|-----
 | user_id | integer| y    |     | y     |
 | name    | text   |      |     | y     |
 | mail    | text   |      |     | y     |
@@ -44,21 +46,21 @@ unique = テーブル内において値が単一か?(単一カラムの行には
 ###Usersテーブルに関するアソシエーション
 > User has many Messages
 >
-> User has and belongs to many Groups
+> User has many throuth Groups
 
 ## Groupsテーブル
 >
-| colimn    | type      | index| null| unique|
-|-----------|-----------|------|-----|-------|
+| colimn    | type      | index| null| unique|外部キー
+|-----------|-----------|------|-----|-------|-----
 | group_id  | integer   | y    |     |       |
-| user_id   | preference|      |     |       |
+| user_id   | preference|      |     |       |Users.user_id
 | broup_name| text      |      |     |       |
 
 ###Groupsテーブルに関するアソシエーション
 
 > Group has many Messages
 
-> Group has and belongs to many Users
+> Group has many through Users
 
 
 
