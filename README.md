@@ -12,10 +12,10 @@ null = nullを許可するか?(許可するカラムの行にははyと記入)
 
 unique = テーブル内において値が単一か?(単一カラムの行にはyと記入)
 
-外部キー = データ型がpreference型の場合(テーブル名.カラム名)の形で記入
+外部キー = データ型がreference型の場合(テーブル名.カラム名)の形で記入
 
 
-## Messagesテーブル
+## messagesテーブル
 
 
 
@@ -24,18 +24,16 @@ unique = テーブル内において値が単一か?(単一カラムの行には
 | id      | integer   |      | y   | y     |      |
 | body    | text      |      | y   |       |
 | image   | string    |      | y   |       |
-| group_id| preference| y    |     |       |Groups.id
-| user_id | preference| y    |     |       |Users.id
 
-###Messagesテーブルに関するアソシエーション
-> Message belongs to user
+###messagesテーブルに関するアソシエーション
+> belongs_to :user
 
-> Message belongs to group
+> belongs_to :group
 
 
 
-## Usersテーブル
->
+## usersテーブル
+
 | colimn  | type   | index| null| unique|外部キー
 |---------|--------|------|-----|-------|-----
 | id      | integer| y    |     | y     |
@@ -43,36 +41,33 @@ unique = テーブル内において値が単一か?(単一カラムの行には
 | mail    | text   |      |     | y     |
 | password| text   |      |     |       |
 
-###Usersテーブルに関するアソシエーション
-> User has many Messages
->
-> User has many throuth Groups
+###usersテーブルに関するアソシエーション
+> has_many : messages
 
-## Groupsテーブル
->
+> has_and_belongs_to_many : groups
+
+
+## groupsテーブル
+
 | colimn    | type      | index| null| unique|外部キー
 |-----------|-----------|------|-----|-------|-----
 | id        | integer   | y    |     |       |
-| user_id   | preference|      |     |       |Users.id
 | broup_name| text      |      |     |       |
 
 
 ###Groupsテーブルに関するアソシエーション
 
-> Group has many Messages
+> has_and_belongs_to_many :users
 
-> Group has many through Users
 
-## Group_Userテーブル
+## groups_usersテーブル
 
->
+
 | colimn    | type      | index| null| unique|外部キー
 |-----------|-----------|------|-----|-------|-----
-| group_id  | preference| y    |     |       |Group.id
-| user_id   | preference| y    |     |       |Users.id
+| group_id  |  reference| y    |     |       |group.id
+| user_id   |  reference| y    |     |       |users.id
 
-### Group_Userテーブルに関するアソシエーション
+### group_usersテーブルに関するアソシエーション
 
-> Group_User belongs to Group
 
-> Group_User belongs to User
