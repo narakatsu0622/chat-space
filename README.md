@@ -24,8 +24,8 @@ unique = テーブル内において値が単一か?(単一カラムの行には
 | id      | integer   |      | y   | y     |      |
 | body    | text      |      | y   |       |
 | image   | string    |      | y   |       |
-| group_id| preference| y    |     |       |Groups.group_id
-| user_id | preference| y    |     |       |Users.user_id
+| group_id| preference| y    |     |       |Groups.id
+| user_id | preference| y    |     |       |Users.id
 
 ###Messagesテーブルに関するアソシエーション
 > Message belongs to user
@@ -38,7 +38,7 @@ unique = テーブル内において値が単一か?(単一カラムの行には
 >
 | colimn  | type   | index| null| unique|外部キー
 |---------|--------|------|-----|-------|-----
-| user_id | integer| y    |     | y     |
+| id      | integer| y    |     | y     |
 | name    | text   |      |     | y     |
 | mail    | text   |      |     | y     |
 | password| text   |      |     |       |
@@ -52,9 +52,10 @@ unique = テーブル内において値が単一か?(単一カラムの行には
 >
 | colimn    | type      | index| null| unique|外部キー
 |-----------|-----------|------|-----|-------|-----
-| group_id  | integer   | y    |     |       |
-| user_id   | preference|      |     |       |Users.user_id
+| id        | integer   | y    |     |       |
+| user_id   | preference|      |     |       |Users.id
 | broup_name| text      |      |     |       |
+
 
 ###Groupsテーブルに関するアソシエーション
 
@@ -62,5 +63,16 @@ unique = テーブル内において値が単一か?(単一カラムの行には
 
 > Group has many through Users
 
+## Group_Userテーブル
 
+>
+| colimn    | type      | index| null| unique|外部キー
+|-----------|-----------|------|-----|-------|-----
+| group_id  | preference| y    |     |       |Group.id
+| user_id   | preference| y    |     |       |Users.id
 
+### Group_Userテーブルに関するアソシエーション
+
+> Group_User belongs to Group
+
+> Group_User belongs to Group
