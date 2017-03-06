@@ -44,9 +44,8 @@ unique = テーブル内において値が単一か?(単一カラムの行には
 | password| text   |      |     |       |
 
 ###usersテーブルに関するアソシエーション
-> has_many : messages
+> has_many : messages, through: :groups
 
-> has_and_belongs_to_many : groups
 
 
 ## groupsテーブル
@@ -54,13 +53,12 @@ unique = テーブル内において値が単一か?(単一カラムの行には
 | colimn    | type       | index| null| unique|外部キー
 |-----------|------------|------|-----|-------|-----
 | id        | integer    | y    |     |       |
-| user_id   | references |      |     |       |users.id
 | broup_name| text       |      |     |       |
 
 
 ###Groupsテーブルに関するアソシエーション
 
-> has_and_belongs_to_many :users
+> has_many :messages, through: :users
 
 
 ## groups_usersテーブル
