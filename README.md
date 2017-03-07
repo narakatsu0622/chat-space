@@ -45,13 +45,13 @@ unique = テーブル内において値が単一か?(単一カラムの行には
 ### usersテーブルに関するアソシエーション
 > has_many : messages,
 
-> has_many :groups, through => :user_groups
+> has_many :groups, through: :user_groups
 
 > has_many :user_groups
 
 ### 追記(gem)
 
-> deviceを使用してユーザー認証機能を作成する
+> deviseを使用してユーザー認証機能を作成する
 
 
 
@@ -60,7 +60,7 @@ unique = テーブル内において値が単一か?(単一カラムの行には
 | colimn    | type       | index| null| unique|
 |-----------|------------|------|-----|-------|
 | id        | integer    |      |     | y     |
-| neme      | string     |      |     |       |
+| name      | string     |      |     |       |
 
 
 ###Groupsテーブルに関するアソシエーション
@@ -72,7 +72,7 @@ unique = テーブル内において値が単一か?(単一カラムの行には
 
 
 
-## user_groupsテーブル
+## group_usersテーブル
 
 
 | colimn    | type       | index| null| unique|
@@ -80,9 +80,10 @@ unique = テーブル内において値が単一か?(単一カラムの行には
 | user_id   | references | y    |     |       |
 | group_id  | references | y    |     |       |
 
-### user_groupsテーブルに関するアソシエーション
+### group_usersテーブルに関するアソシエーション
 
 > belongs_to : user
 
 > belongs_to : group
 
+> has_many : user_groups
