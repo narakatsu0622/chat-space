@@ -20,7 +20,6 @@ unique = テーブル内において値が単一か?(単一カラムの行には
 
 |colimn   | type      | index| null| unique|
 |---------|-----------|------|-----|-------|
-| id      | integer   |      |     | y     |
 | body    | text      |      |     |       |
 | image   | text      |      | y   |       |
 | group_id| references| y    |     |       |
@@ -37,7 +36,6 @@ unique = テーブル内において値が単一か?(単一カラムの行には
 
 | colimn  | type   | index| null| unique|
 |---------|--------|------|-----|-------|
-| id      | integer| y    |     | y     |
 | name    | string | y    |     | y     |
 | mail    | text   |      |     | y     |
 | password| string |      |     |       |
@@ -59,7 +57,6 @@ unique = テーブル内において値が単一か?(単一カラムの行には
 
 | colimn    | type       | index| null| unique|
 |-----------|------------|------|-----|-------|
-| id        | integer    |      |     | y     |
 | name      | string     |      |     |       |
 
 
