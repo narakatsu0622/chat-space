@@ -12,20 +12,19 @@ null = nullを許可するか?(許可するカラムの行にははyと記入)
 
 unique = テーブル内において値が単一か?(単一カラムの行にはyと記入)
 
-外部キー = データ型がreferences型の場合(テーブル名.カラム名)の形で記入
 
 
 ## messagesテーブル
 
 
 
-|colimn   | type      | index| null| unique|外部キー|
-|---------|-----------|------|-----|-------|------|
-| id      | integer   |      | y   | y     |      |
-| body    | text      |      | y   |       |
-| image   | string    |      | y   |       |
-| group_id| references| y    |     |       |groups.id
-| user_id | references| y    |     |       |users.id
+|colimn   | type      | index| null| unique|
+|---------|-----------|------|-----|-------|
+| id      | integer   |      |     | y     |
+| body    | text      |      |     |       |
+| image   | text      |      | y   |       |
+| group_id| references| y    |     |       |
+| user_id | references| y    |     |       |
 
 ###messagesテーブルに関するアソシエーション
 > belongs_to :user
@@ -36,39 +35,53 @@ unique = テーブル内において値が単一か?(単一カラムの行には
 
 ## usersテーブル
 
-| colimn  | type   | index| null| unique|外部キー
-|---------|--------|------|-----|-------|-----
+| colimn  | type   | index| null| unique|
+|---------|--------|------|-----|-------|
 | id      | integer| y    |     | y     |
-| name    | text   |      |     | y     |
+| name    | string | y    |     | y     |
 | mail    | text   |      |     | y     |
-| password| text   |      |     |       |
+| password| string |      |     |       |
 
-###usersテーブルに関するアソシエーション
-> has_many : messages, through: :groups
+### usersテーブルに関するアソシエーション
+> has_many : messages,
+
+> has_many :groups, through => :user_groups
+
+> has_many :user_groups
+
+### 追記(gem)
+
+> deviceを使用してユーザー認証機能を作成する
 
 
 
 ## groupsテーブル
 
-| colimn    | type       | index| null| unique|外部キー
-|-----------|------------|------|-----|-------|-----
-| id        | integer    | y    |     |       |
-| broup_name| text       |      |     |       |
+| colimn    | type       | index| null| unique|
+|-----------|------------|------|-----|-------|
+| id        | integer    |      |     | y     |
+| neme      | string     |      |     |       |
 
 
 ###Groupsテーブルに関するアソシエーション
 
-> has_many :messages, through: :users
+> has_many :messages
+
+> has_many :users, through: :user_groups
 
 
-## groups_usersテーブル
 
 
-| colimn    | type      | index| null| unique|外部キー
-|-----------|-----------|------|-----|-------|-----
-| group_id  |  references| y    |     |       |group.id
-| user_id   |  references| y    |     |       |users.id
+## user_groupsテーブル
 
-### group_usersテーブルに関するアソシエーション
 
+| colimn    | type       | index| null| unique|
+|-----------|------------|------|-----|-------|
+| user_id   | references | y    |     |       |
+| group_id  | references | y    |     |       |
+
+### user_groupsテーブルに関するアソシエーション
+
+> belongs_to : user
+> belongs_to : group
 
