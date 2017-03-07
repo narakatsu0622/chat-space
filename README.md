@@ -37,9 +37,9 @@ type = データ型
 ### usersテーブルに関するアソシエーション
 > has_many : messages,
 
-> has_many :groups, through: :user_groups
+> has_many :groups, through: :group_users
 
-> has_many :user_groups
+> has_many :group_users
 
 ### 追記(gem)
 
@@ -58,9 +58,9 @@ type = データ型
 
 > has_many :messages
 
-> has_many :users, through: :user_groups
+> has_many :users, through: :group_users
 
-> has_many :user_groups
+> has_many :group_users
 
 
 
