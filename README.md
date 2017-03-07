@@ -69,6 +69,8 @@ unique = テーブル内において値が単一か?(単一カラムの行には
 
 > has_many :users, through: :user_groups
 
+> has_many :user_groups
+
 
 
 
