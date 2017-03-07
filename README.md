@@ -83,5 +83,6 @@ unique = テーブル内において値が単一か?(単一カラムの行には
 ### user_groupsテーブルに関するアソシエーション
 
 > belongs_to : user
+
 > belongs_to : group
 
