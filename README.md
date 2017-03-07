@@ -1,24 +1,81 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## データベース定義
 
-Things you may want to cover:
+column = カラム名
 
-* Ruby version
+type = データ型
 
-* System dependencies
 
-* Configuration
 
-* Database creation
 
-* Database initialization
+## messagesテーブル
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+|colimn   | type      |index| null| unique|
+|---------|-----------|------|-----|-------|
+| body    | text      |      |false|       |
+| image   | text      |      |    |       |
+| group_id| references| yes  |false|       |
+| user_id | references| yes  |false|       |
 
-* ...
+###messagesテーブルに関するアソシエーション
+> belongs_to :user
+
+> belongs_to :group
+
+
+
+## usersテーブル
+
+| colimn  | type   | index| null| unique|
+|---------|--------|------|-----|-------|
+| name    | string | yes  |false| true  |
+
+
+### usersテーブルに関するアソシエーション
+> has_many : messages,
+
+> has_many :groups, through: :group_users
+
+> has_many :group_users
+
+### 追記(gem)
+
+> deviseのデフォルト設定を使用して、テーブルを生成する。
+
+
+
+## groupsテーブル
+
+| colimn    | type       | index| null| unique|
+|-----------|------------|------|-----|-------|
+| name      | string     |      |false|       |
+
+
+###Groupsテーブルに関するアソシエーション
+
+> has_many :messages
+
+> has_many :users, through: :group_users
+
+> has_many :group_users
+
+
+
+
+## group_usersテーブル
+
+
+| colimn    | type       | index| null| unique|
+|-----------|------------|------|-----|-------|
+| user_id   | references | yes |false|       |
+| group_id  | references | yes |false|       |
+
+### group_usersテーブルに関するアソシエーション
+
+> belongs_to : user
+
+> belongs_to : group
+
