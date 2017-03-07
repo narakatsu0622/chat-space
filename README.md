@@ -1,16 +1,11 @@
 # README
 
-## データベース定義の記入方法
+## データベース定義
 
 column = カラム名
 
 type = データ型
 
-index = indexを貼るか?(貼るカラムの行にはyと記入)
-
-null = nullを許可するか?(許可するカラムの行にははyと記入)
-
-unique = テーブル内において値が単一か?(単一カラムの行にはyと記入)
 
 
 
@@ -18,12 +13,12 @@ unique = テーブル内において値が単一か?(単一カラムの行には
 
 
 
-|colimn   | type      | index| null| unique|
+|colimn   | type      |index| null| unique|
 |---------|-----------|------|-----|-------|
-| body    | text      |      |     |       |
-| image   | text      |      | y   |       |
-| group_id| references| y    |     |       |
-| user_id | references| y    |     |       |
+| body    | text      |      |false|       |
+| image   | text      |      |    |       |
+| group_id| references| yes  |false|       |
+| user_id | references| yes  |false|       |
 
 ###messagesテーブルに関するアソシエーション
 > belongs_to :user
@@ -36,9 +31,8 @@ unique = テーブル内において値が単一か?(単一カラムの行には
 
 | colimn  | type   | index| null| unique|
 |---------|--------|------|-----|-------|
-| name    | string | y    |     | y     |
-| mail    | text   |      |     | y     |
-| password| string |      |     |       |
+| name    | string | yes  |false| true  |
+
 
 ### usersテーブルに関するアソシエーション
 > has_many : messages,
@@ -49,7 +43,7 @@ unique = テーブル内において値が単一か?(単一カラムの行には
 
 ### 追記(gem)
 
-> deviseを使用してユーザー認証機能を作成する
+> deviseのデフォルト設定を使用して、テーブルを生成する。
 
 
 
@@ -57,7 +51,7 @@ unique = テーブル内において値が単一か?(単一カラムの行には
 
 | colimn    | type       | index| null| unique|
 |-----------|------------|------|-----|-------|
-| name      | string     |      |     |       |
+| name      | string     |      |false|       |
 
 
 ###Groupsテーブルに関するアソシエーション
@@ -76,8 +70,8 @@ unique = テーブル内において値が単一か?(単一カラムの行には
 
 | colimn    | type       | index| null| unique|
 |-----------|------------|------|-----|-------|
-| user_id   | references | y    |     |       |
-| group_id  | references | y    |     |       |
+| user_id   | references | yes |false|       |
+| group_id  | references | yes |false|       |
 
 ### group_usersテーブルに関するアソシエーション
 
