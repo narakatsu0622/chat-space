@@ -3,13 +3,13 @@
   width: 100%;
 }
 .header {
-   background-color: $skyblue;
-   width: 100%;
-   height: 30px;
+  background-color: $skyblue;
+  width: 100%;
+  height: 30px;
 
-    .header-message{
-     text-align: center;
-     color: $white;
+  .header-message {
+    text-align: center;
+    color: $white;
   }
 }
 
@@ -35,20 +35,20 @@
   float: left;
 
   .left-content-top {
-  background-color: $midnightblue;
-  width: 260px;
-  min-height: 120px;
-  padding: 0px 20px;
-  line-height: 120px;
+    background-color: $midnightblue;
+    width: 260px;
+    min-height: 120px;
+    padding: 0px 20px;
+    line-height: 120px;
 
-  .left-content-top-username {
-  color: $white;
-  padding-right: 0 auto;
-  font-size: 16px;
-  display: block;
-}
-  }
+    .left-content-top-username {
+      color: $white;
+      padding-right: 0 auto;
+      font-size: 16px;
+      display: block;
     }
+  }
+}
 
 
 
@@ -57,16 +57,17 @@
   padding: 20px 20px 40px 20px;
 
   .group-name {
-  color: $white;
-  font-size: 15px;
-  text-align: left;
+    color: $white;
+    font-size: 15px;
+    text-align: left;
   }
-  .group-comment {
-  color: $white;
-  font-size: 11px;
-  text-align: left;
+
+    .group-comment {
+      color: $white;
+      font-size: 11px;
+      text-align: left;
+    }
 }
-  }
 
 
 
@@ -77,43 +78,42 @@
   float: left;
 
   .right-content-top {
-  background-color: $white;
-  height: 91px;
-  border-bottom: 1px;
-  border-bottom-style: solid;
-  border-color: #eeeeee;
-  padding-top: 28px;
-
-}
-
-
-  .right-content-top-group-name {
-  color: $groupfont;
-  font-size: 20px;
-  padding-left: 40px;
-  display: block;
-  float: left;
-}
-
-.right-content-user-name {
-  color: #999999;
-  font-size: 12px;
-  margin-top: 7px;
-  padding-left: 40px;
-  clear: both;
-  float: left;
-  display: block;
-}
+    background-color: $white;
+    height: 91px;
+    border-bottom: 1px;
+    border-bottom-style: solid;
+    border-color: #eeeeee;
+    padding-top: 28px;
   }
-  
+
+
+    .right-content-top-group-name {
+      color: $groupfont;
+      font-size: 20px;
+      padding-left: 40px;
+      display: block;
+      float: left;
+    }
+
+      .right-content-user-name {
+        color: #999999;
+        font-size: 12px;
+        margin-top: 7px;
+        padding-left: 40px;
+        clear: both;
+        float: left;
+        display: block;
+      }
+}
+
 
 .edit-btn {
-    float: right;
-    height: 40px;
-    border: solid $skyblue;
-    margin-right: 40px;
-    line-height: 40px;
-    text-align: center;
+  float: right;
+  height: 40px;
+  border: solid $skyblue;
+  margin-right: 40px;
+  line-height: 40px;
+  text-align: center;
 }
 
 
@@ -123,7 +123,7 @@
     padding-right: 20px;
     padding-left: 20px;
     color: $skyblue;
-}
+  }
 
 
 .chatspace {
@@ -134,29 +134,29 @@
 
 
   .chatspace-tweet-username {
-  font-size: 16px;
-  padding: 0px 10px 10px 40px;
-  font-style: bold;
-  color: $fontblack;
-  float: left;
-}
-
-.chatspace-tweet-time {
-  font-size: 12px;
-  color: #999999;
-  padding: 0px 10px 10px 0px;
-}
-
-
-
-.chatspace-tweet-text {
-  padding-bottom: 40px;
-  font-size: 14px;
-  color: $fontblack;
-  clear: both;
-  padding-left: 40px;
-}
+    font-size: 16px;
+    padding: 0px 10px 10px 40px;
+    font-style: bold;
+    color: $fontblack;
+    float: left;
   }
+
+    .chatspace-tweet-time {
+      font-size: 12px;
+      color: #999999;
+      padding: 0px 10px 10px 0px;
+    }
+
+
+
+      .chatspace-tweet-text {
+        padding-bottom: 40px;
+        font-size: 14px;
+        color: $fontblack;
+        clear: both;
+        padding-left: 40px;
+      }
+}
 
 .chatspace-footer {
   background-color: #e6e6e6;
@@ -165,35 +165,26 @@
   clear: both;
 }
 
-.text-field {
-  height: 50px;
-  width: calc( 100vw - 479px);
-  float: left;
-  line-height: 50px;
-  display: block;
-}
+  .text-field {
+    height: 50px;
+    width: calc( 100vw - 479px);
+    float: left;
+    line-height: 50px;
+    display: block;
+  }
 
-.fa-file-image-o {
-  color: black;
-  float: left;
-  position: absolute;
-  bottom: 5px;
-  right: 118px;
-}
+    .fa-file-image-o {
+      color: black;
+      float: left;
+      position: absolute;
+      bottom: 5px;
+      right: 118px;
+    }
 
-
-
-.send-btn {
-  background-color: $skyblue;
-  height: 50px;
-  float: right;
-  color: $white;
-  margin-left: 20px;
-}
-
-
-
-
-
-
-
+      .send-btn {
+        background-color: $skyblue;
+        height: 50px;
+        float: right;
+        color: $white;
+        margin-left: 20px;
+      }
