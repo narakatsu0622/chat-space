@@ -1,11 +1,47 @@
-!!!
-%html
-  %head
-    %meta{ content:"text/html; charset=UTF-8", http: { equiv: "Content-Type" }}/
-    %title ChatSpace
-    = csrf_meta_tags
-    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
-    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
-  %body
-   .header
-   .leftcontent
+.display
+  .header
+    .header-message
+      チャットグループが作成されました。
+  .left-contents
+    .left-content-top
+      .left-content-top-username
+        USER
+      = link_to '/chatspace' do
+        = fa_icon 'cog 2x'
+      = link_to "/chatspace" do
+        = fa_icon 'pencil-square-o 2x'
+    .box-group-massage
+      .group-name
+        lipton
+      .group-comment
+        カロリーメイト
+  .right-contents
+    .right-content-top
+      .edit-btn
+        = link_to 'EDIT','/chatspace',class: 'edit'
+      .right-content-top-group-name
+        グリコ
+      .right-content-user-name
+        ポッキー
+    .chatspace
+      .chatspace-tweet-username
+        サンビーム
+      .chatspace-tweet-time
+        yyyy/mm/dd hh:mm:ss
+      .chatspace-tweet-text
+        グルービー！！
+      .chatspace-tweet-username
+        ウマゴン
+      .chatspace-tweet-time
+        yyyy/mm/dd hh:mm:ss
+      .chatspace-tweet-text
+        メルメルメー！！
+    .chatspace-footer
+      = form_tag('', method: :post) do
+        = text_field_tag :text, "", class: 'text-field', placeholder: 'type a message'
+        = submit_tag 'SEND', class: "send-btn"
+        = link_to "/chatspace" do
+          = fa_icon 'file-image-o'
+
+
+
