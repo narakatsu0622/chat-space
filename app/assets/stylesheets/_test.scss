@@ -47,10 +47,8 @@
   font-size: 16px;
   display: block;
 }
-
-
-}
   }
+    }
 
 
 
@@ -68,7 +66,7 @@
   font-size: 11px;
   text-align: left;
 }
-}
+  }
 
 
 
@@ -105,9 +103,10 @@
   clear: both;
   float: left;
   display: block;
+}
+  }
+  
 
-}
-}
 .edit-btn {
     float: right;
     height: 40px;
@@ -124,7 +123,7 @@
     padding-right: 20px;
     padding-left: 20px;
     color: $skyblue;
-  }
+}
 
 
 .chatspace {
@@ -157,9 +156,7 @@
   clear: both;
   padding-left: 40px;
 }
-
-
-}
+  }
 
 .chatspace-footer {
   background-color: #e6e6e6;
@@ -174,7 +171,7 @@
   float: left;
   line-height: 50px;
   display: block;
-  }
+}
 
 .fa-file-image-o {
   color: black;
