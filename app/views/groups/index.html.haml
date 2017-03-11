@@ -1,19 +1,19 @@
 .display
   .header
-    .header-message
+    .header__message
       チャットグループが作成されました。
   .left-contents
     .left-content-top
-      .left-content-top-username
+      .left-content-top__name
         USER
       = link_to '/chatspace' do
         = fa_icon 'cog 2x'
       = link_to "/chatspace" do
         = fa_icon 'pencil-square-o 2x'
-    .box-group-massage
-      .group-name
+    .group-info
+      .group-info__name
         lipton
-      .group-comment
+      .group-info__comment
         カロリーメイト
   .right-contents
     .right-content-top
