@@ -11,6 +11,7 @@
     letter-spacing: 2px;
     font-size: 24px;
     text-align: center;
+    font-weight: bold;
   }
 
   &__errors {
@@ -40,6 +41,7 @@
   }
 
   &__field {
+    @include clearfix;
     margin-top: 30px;
 
     &--left {
