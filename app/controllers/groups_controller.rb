@@ -26,7 +26,7 @@ class GroupsController < ApplicationController
       redirect_to root_path, notice: 'グループが更新されました'
     else
       flash.now[:alert] = 'グループが更新されませんでした'
-      render action: :edit
+      render :edit
     end
 
   end
