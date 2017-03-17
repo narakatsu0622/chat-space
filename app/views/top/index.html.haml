@@ -1,0 +1,44 @@
+.display
+  .header
+    .header__message
+      チャットグループが作成されました。
+  .left-contents
+    .left-content-top
+      .left-content-top__name
+        USER
+      = link_to edit_user_registration_path do
+        = fa_icon 'cog 2x'
+      = link_to new_group_path do
+        = fa_icon 'pencil-square-o 2x'
+    .group-info
+      .group-info__name
+        lipton
+      .group-info__comment
+        カロリーメイト
+  .right-contents
+    .right-content-top
+      .edit-btn
+        = link_to 'EDIT', edit_group_path(id:1),class: 'edit'
+      .right-content-top-group-name
+        グリコ
+      .right-content-user-name
+        ポッキー
+    .chatspace
+      .chatspace-tweet-username
+        サンビーム
+      .chatspace-tweet-time
+        yyyy/mm/dd hh:mm:ss
+      .chatspace-tweet-text
+        グルービー！！
+      .chatspace-tweet-username
+        ウマゴン
+      .chatspace-tweet-time
+        yyyy/mm/dd hh:mm:ss
+      .chatspace-tweet-text
+        メルメルメー！！
+    .chatspace-footer
+      = form_tag('', method: :post) do
+        = text_field_tag :text, "", class: 'text-field', placeholder: 'type a message'
+        = submit_tag 'SEND', class: "send-btn"
+        = link_to "/chatspace" do
+          = fa_icon 'file-image-o'
