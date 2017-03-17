@@ -106,3 +106,19 @@
     border: 0;
   }
 }
+
+.chat-group-form__search{
+  @include clearfix;
+  #user-search-hidden{
+    display: none;
+  }
+}
+
+#user-search-result{
+  .list{
+    list-style-type: none;
+    line-height: 50px;
+    padding-left: 15px;
+    border-bottom: 1px solid #ddd;
+  }
+}
