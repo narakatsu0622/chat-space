@@ -1,27 +1,19 @@
-.chat-group-form
-  %h1 新規チャットグループ
-  = form_for(@group) do |f|
-    .chat-group-form__field.clearfix
-      .chat-group-form__field--left
-        = f.label :name,"グループ名",class: "chat-group-form__label"
-      .chat-group-form__field--right
-        = f.text_field :name,placeholder: "グループ名を入力して下さい", class: 'chat-group-form__input'
-    .chat-group-form__field.clearfix
-      .chat-group-form__field--left
-        = f.label :name,"チャットメンバーを追加", class: "chat-group-form__label"
-      .chat-group-form__field--right
-        .chat-group-form__search.clearfix
-          //ユーザー検索機能は編集機能で実装予定
-        #user-search-result
-    .chat-group-form__field.clearfix
-      .chat-group-form__field--left
-        = f.label :name,"チャットメンバー", class: "chat-group-form__label"
-      .chat-group-form__field--right
-        #chat-group-users
-          #chat-group-user-22.chat-group-user.clearfix
-            /編集機能で実装予定
-            %p.chat-group-user__name seo_kyohei
-    .chat-group-form__field.clearfix
-      .chat-group-form__field--left
-      .chat-group-form__field--right
-        = f.submit "Save", class: "chat-group-form__action-btn", desable_with: "save"
+= form_for(@group) do |f|
+  .chat-group-form__field.clearfix
+    .chat-group-form__field--left
+      = f.label :name, 'グループ名', class: "chat-group-form__label"
+    .chat-group-form__field--right
+      = f.text_field :name, value: "#{@group.name}", id: "chat_group_name", class: "chat-group-form__input"
+  .chat-group-form__field.clearfix
+    .chat-group-form__field--left
+      = f.label :name, "チャットメンバーを追加", class: "chat-group-form__label"
+    .chat-group-form__field--right
+      .chat-group-form__search.clearfix
+      #user-search-result
+  .chat-group-form__field.clearfix
+    .chat-group-form__field--left
+      = f.label :name, "チャットメンバー", class: "chat-group-form__label"
+  .chat-group-form__field.clearfix
+    .chat-group-form__field--left
+    .chat-group-form__field--right
+      = f.submit "Save", class: "chat-group-form__action-btn", disable_with: "save"
