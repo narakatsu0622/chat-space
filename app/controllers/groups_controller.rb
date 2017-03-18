@@ -1,8 +1,9 @@
 class GroupsController < ApplicationController
 
+  before_action :set_group_new, only: [:new, :create]
+  before_action :set_group_update, only: [:edit, :update]
+
   def new
-    @group = Group.new
-    @users = User.all
   end
 
   def index
@@ -19,12 +20,9 @@ class GroupsController < ApplicationController
   end
 
   def edit
-    @group = Group.find(params[:id])
-    @users = User.all
   end
 
   def update
-    @group = Group.find(params[:id])
     if @group.update(group_params)
       redirect_to group_messages_path(@group), notice: 'グループが更新されました'
     else
@@ -37,6 +35,16 @@ class GroupsController < ApplicationController
   private
   def group_params
     params.require(:group).permit(:name, { :user_ids => [] })
+  end
+
+  def set_group_new
+    @group = Group.new
+    @users = User.all
+  end
+
+  def set_group_update
+    @group = Group.find(params[:id])
+    @users = User.all
   end
 
 end
