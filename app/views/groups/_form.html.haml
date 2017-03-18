@@ -8,7 +8,10 @@
     .chat-group-form__field--left
       = f.label :name, "チャットメンバーを追加", class: "chat-group-form__label"
     .chat-group-form__field--right
-      .chat-group-form__search.clearfix
+      .chat-group-form__search
+        = f.label :users, style: "visibility:hidden"
+        = collection_check_boxes(:group, :user_ids, @users, :id, :name) do |u|
+          = u.label { u.check_box + u.text }
       #user-search-result
   .chat-group-form__field.clearfix
     .chat-group-form__field--left
