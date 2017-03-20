@@ -37,8 +37,7 @@
       .chatspace-tweet-text
         メルメルメー！！
     .chatspace-footer
-      = form_tag('', method: :post) do
-        = text_field_tag :text, "", class: 'text-field', placeholder: 'type a message'
-        = submit_tag 'SEND', class: "send-btn"
-        = link_to "/chatspace" do
-          = fa_icon 'file-image-o'
+      = form_for [@group,@message] do |f|
+        = f.text_field :body, placeholder: "type a message", class: "text-field"
+        = f.submit "SEND", class: "send-btn"
+        = fa_icon 'file-image-o'
