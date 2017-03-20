@@ -4,6 +4,7 @@ class MessagesController < ApplicationController
     @users = @group.users
     @messages = @group.messages
   end
+
   def create
     @message = Message.new(message_params)
     if Message.save
