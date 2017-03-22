@@ -7,7 +7,6 @@ describe User do
       expect(message).to be_valid
     end
 
-
     it "is invalid without body" do
       message = build(:message, body: nil)
       message.valid?
