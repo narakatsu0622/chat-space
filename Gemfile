@@ -62,6 +62,8 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'devise'
+gem 'rake', '<11.0'
+gem 'rails-i18n'
 
 group :test do
   gem 'faker'
