@@ -43,6 +43,8 @@ gem 'font-awesome-rails'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+  gem 'rspec-rails', "~> 3.1.0"
+  gem 'factory_girl_rails', "~> 4.4.1"
 end
   gem 'pry-rails'
 
@@ -60,3 +62,9 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'devise'
+gem 'rake', '<11.0'
+gem 'rails-i18n'
+
+group :test do
+  gem 'faker'
+end
