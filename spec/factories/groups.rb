@@ -4,7 +4,7 @@ FactoryGirl.define do
 
     trait :with_messages do
       after(:create) do |group|
-        3.times { create(:message, group: group)}
+        3.times { create(:message, group: group, user: user)}
       end
     end
   end
