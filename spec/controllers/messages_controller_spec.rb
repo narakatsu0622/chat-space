@@ -15,11 +15,11 @@ describe MessagesController do
     end
 
       it "assigns the requested contact @message" do
-          expect(assigns(:message)).to be_a_new(Message)
+        expect(assigns(:message)).to be_a_new(Message)
       end
 
       it "renders the :index template" do
-          expect(response).to render_template :index
+        expect(response).to render_template :index
       end
   end
 
