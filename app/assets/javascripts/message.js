@@ -13,7 +13,7 @@ $('.js-form').on('sudmit', function(e)) {
   var formData = new FormData( form );
   $.ajax({
     type: 'POST',
-    url: location.pathname,
+    url: group_messages,
     data: formData,
     dataType: 'json',
     processData: false,
