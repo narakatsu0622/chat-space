@@ -9,18 +9,15 @@ $(function() {
 $('.js-form').on('sudmit', function(e)) {
   e.preventDefault();
   e.stopPropagation();
-  var textField = $('.js-form__text-field');
-  var message = textField.val();
-  var path_name = location.pathname;
+  var message = $('.js-form__text-field').val();
+  var formData = new FormData( form );
   $.ajax({
     type: 'POST',
-    url: path_name,
-    data: {
-      message: {
-        body: message
-      }
-    },
-    dataType: 'json'
+    url: location.pathname,
+    data: formData,
+    dataType: 'json',
+    processData: false,
+    contentType: false
   })
   .done(function(data) {
     var html = buildHTML(data,message);
@@ -30,5 +27,4 @@ $('.js-form').on('sudmit', function(e)) {
   .fail(function() {
     alert('error');
   });
-});
 });
