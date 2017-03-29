@@ -122,6 +122,7 @@
   height: calc( 100vh - 256px);
   clear: both;
   padding-top: 46px;
+  overflow: scroll;
 
     .chatspace-tweet-username {
       font-size: 16px;
