@@ -24,18 +24,7 @@
       .right-content-user-name
         ポッキー
     .chatspace
-      .chatspace-tweet-username
-        サンビーム
-      .chatspace-tweet-time
-        yyyy/mm/dd hh:mm:ss
-      .chatspace-tweet-text
-        グルービー！！
-      .chatspace-tweet-username
-        ウマゴン
-      .chatspace-tweet-time
-        yyyy/mm/dd hh:mm:ss
-      .chatspace-tweet-text
-        メルメルメー！！
+      =render partial: "message", collection: @massages
     .chatspace-footer
       = form_for ([@group,@message]), html: { class: 'js-form' } do |f|
         = f.text_field :body, placeholder: "type a message", class: "text-field"
