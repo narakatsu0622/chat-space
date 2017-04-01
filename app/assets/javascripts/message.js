@@ -23,9 +23,12 @@ $(function() {
       contentType: false
     })
     .done(function(data) {
-      var html = buildHTML(data,message);
-      $('.text-field').append(html);
+      var html = buildHTML(data.message);
+      $('.chatspace').append(html);
       textField.val('');
+      $('.chatspace').delay(100).animate({
+      scrollTop: $(document).height()
+    },1500);
     })
     .fail(function() {
       alert('error');
