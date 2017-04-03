@@ -7,6 +7,12 @@ class GroupsController < ApplicationController
   end
 
   def index
+    @groups = current_user.groups
+  end
+
+  def ajax_user_list
+    @user = User.where('name LIKE ?', "%#{params[:user_name]}%")
+    render 'user_list', formats: [:json], handlers: [:jbuilder]
   end
 
   def create
@@ -20,7 +26,7 @@ class GroupsController < ApplicationController
   end
 
   def edit
-    @group = Group.find(params[:group_id])
+    @group = Group.find(params[:id])
   end
 
   def update
