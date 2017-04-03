@@ -19,7 +19,7 @@ $(function() {
     var word = newInputs.join("|");
     $.ajax({
       type: 'GET',
-      url: '/groups/ajax_user_list',
+      url: '/users',
       data: {
         user_name: word
       },
