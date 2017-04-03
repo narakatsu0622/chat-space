@@ -8,15 +8,15 @@
     .chat-group-form__field--left
       = f.label :name, "チャットメンバーを追加", class: "chat-group-form__label"
     .chat-group-form__field--right
-      .chat-group-form__search
-        = f.label :users, style: "visibility:hidden"
-        = collection_check_boxes(:group, :user_ids, @users, :id, :name) do |u|
-          = u.label { u.check_box + u.text }
-      #user-search-result
+      = f.text_field :users, value:"", placeholder: "追加したいユーザー名を入力してください", id: 'keyword', class: 'chat-group-form__input'
+  .chat-group-form__field.clearfix
+    .chat-group-form__field--right.clearfix
+      %ul.clearfix
+        #user-list.clearfix
   .chat-group-form__field.clearfix
     .chat-group-form__field--left
       = f.label :name, "チャットメンバー", class: "chat-group-form__label"
   .chat-group-form__field.clearfix
     .chat-group-form__field--left
-    .chat-group-form__field--right
+    .chat-group-form__field--right.clearfix
       = f.submit "Save", class: "chat-group-form__action-btn", disable_with: "save"
