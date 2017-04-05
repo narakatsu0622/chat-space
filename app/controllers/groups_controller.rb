@@ -27,6 +27,7 @@ class GroupsController < ApplicationController
 
   def edit
     @group = Group.find(params[:id])
+    @other_users = @group.users.other_users(current_user)
   end
 
   def update

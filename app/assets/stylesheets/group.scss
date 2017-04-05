@@ -42,7 +42,6 @@
 
   &__field {
     @include clearfix;
-    margin-top: 30px;
 
     &--left {
       float: left;
@@ -109,16 +108,35 @@
 
 .chat-group-form__search{
   @include clearfix;
+  margin-top: 15px;
   #user-search-hidden{
     display: none;
   }
 }
 
-#user-search-result{
-  .list{
-    list-style-type: none;
-    line-height: 50px;
+  #user-list{
+    height: 25px;
+    font-size: 14px;
+    line-height: 25px;
     padding-left: 15px;
     border-bottom: 1px solid #ddd;
   }
-}
+
+  .add-user {
+    margin-right: 15px;
+    float: right;
+    display: inline-block;
+    cursor: pointer;
+    color: $skyblue;
+  }
+
+  .margin-top {
+   margin-top: 15px;
+  }
+
+  .remove-user{
+    float: right;
+    display: inline-block;
+    cursor: pointer;
+    color: red;
+  }

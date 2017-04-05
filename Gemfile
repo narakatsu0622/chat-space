@@ -38,6 +38,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'haml-rails'
 # Font Awesome
 gem 'font-awesome-rails'
+gem 'jquery-turbolinks'
 
 
 group :development, :test do
