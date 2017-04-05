@@ -8,4 +8,5 @@ class User < ApplicationRecord
   has_many :group_users
 
   scope :other_users, ->(current_user) { where.not(id: current_user.id) }
+  mount_uploader :image, ImageUploader
 end
