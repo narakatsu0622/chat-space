@@ -29,4 +29,6 @@
       = form_for ([@group,@message]), html: { class: 'js-form' } do |f|
         = f.text_field :body, placeholder: "type a message", class: "text-field"
         = f.submit "SEND", class: "send-btn"
-        = fa_icon 'file-image-o'
+        //= fa_icon 'file-image-o'
+        = f.file_field :image, style: "display: none;", id: "file_input_origin"
+        = fa_icon("image 2x", id: "file_input")
