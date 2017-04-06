@@ -34,4 +34,7 @@ $(function() {
       alert('error');
     });
   });
+  $('#image_input').on("click", function() {
+    $('image_input_origin').click();
+  });
 });
