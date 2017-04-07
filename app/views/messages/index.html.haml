@@ -5,7 +5,7 @@
   .left-contents
     .left-content-top
       .left-content-top__name
-        USER
+        #{current_user.name}
       = link_to edit_user_registration_path do
         = fa_icon 'cog 2x'
       = link_to new_group_path do
@@ -24,10 +24,10 @@
       .right-content-user-name
         ポッキー
     .chatspace
-      =render partial: "message", collection: @massages
+      =render partial: 'message', collection: @messages
     .chatspace-footer
       = form_for ([@group,@message]), html: { class: 'js-form' } do |f|
         = f.text_field :body, placeholder: "type a message", class: "text-field"
         = f.submit "SEND", class: "send-btn"
         = f.file_field :image, style: "display: none;", id: "image_input_origin"
-        = fa_icon("image 2x", id: "image_input")
+        = fa_icon("image 2x", id: "image_input",class: 'fa-file-image-o')

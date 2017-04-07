@@ -1,0 +1,8 @@
+.group-info
+  %p.group-info__name
+    = group.name
+  %p.group-info__comment
+    -if group.messages.present?
+     = group.messages.last.body
+    - else
+      まだ新着メッセージがありません
