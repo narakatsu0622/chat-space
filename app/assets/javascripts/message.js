@@ -3,7 +3,8 @@ $(function() {
     var html = (`<div class="chat-space">
                  <P class=chatspace-tweet-username>${ message.name }</p>
                  <p class=chatspace-tweet-time>${ message.created_at }</p>
-                 <p class=chatspace-tweet-text>${ message.body }</p></div>`);
+                 <p class=chatspace-tweet-text>${ message.body }</p>
+                 <image src= ${ message.image.url }</div>`);
     return html;
   }
 
@@ -35,6 +36,6 @@ $(function() {
     });
   });
   $('#image_input').on("click", function() {
-    $('image_input_origin').click();
+    $('#image_input_origin').click();
   });
 });

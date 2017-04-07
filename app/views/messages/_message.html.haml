@@ -1,6 +1,8 @@
 %p.chatspace-tweet-username
-  = message.user.nickname
+  = message.user.name
 %p.chatspace-tweet-time
   = message.created_at.strftime("%Y-%m-%d %H:%M:%S")
 %p.chatspace-tweet-text
   = message.body
+.chatspace-tweet-image
+  = image_tag(message.image)
