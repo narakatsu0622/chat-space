@@ -5,6 +5,11 @@ class MessagesController < ApplicationController
     @group = Group.find(params[:group_id])
     @message = Message.new
     @groups = current_user.groups
+    @add_messages = @group.messages.after_id(params[:last_message_id])
+    respond_to do |format|
+      format.html
+      format.json { render "update_message.json.jbuilder" }
+    end
   end
 
   def create
